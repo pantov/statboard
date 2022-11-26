@@ -170,15 +170,15 @@ if (isset($_GET['update'])) {
 					<td colspan="2" align="center"><h5>9 мес. 2021 года</h5></td>
 				  </tr>				  
 				  <tr>
-					<td><center><h3 id="i1"><p>{{ i1a }}</p></h3></center></td>
-					<td><center><h3 id="i2">{{ i2a }}</h3></center></td>
+					<td><center><h3 id="i1"> <animated-integer :value="i1"></animated-integer> </h3></center></td>
+					<td><center><h3 id="i2"> <animated-integer :value="i2"></animated-integer> </h3></center></td>
 				  </tr>
 				  <tr>
 					<td colspan="2" align="center"><h5>9 мес. 2022 года</h5></td>
 				  </tr>				  
 				  <tr>
-					<td><center><h3 id="i3">{{ i3a }}</h3></center></td>
-					<td><center><h3 id="i4">{{ i4a }}</h3></center></td>
+					<td><center><h3 id="i3"> <animated-integer :value="i3"></animated-integer> </h3></center></td>
+					<td><center><h3 id="i4"> <animated-integer :value="i4"></animated-integer> </h3></center></td>
 				  </tr>
 				
 				</table>
@@ -403,51 +403,54 @@ if (isset($_GET['update'])) {
 </div>
 </div>
 <script>
+
 const app = Vue.createApp({
   data() {
-    return { 
+    return {
       i1: 0,
-      i1t: 0,
-	  i2: 0,
-      i2t: 0,
-	  i3: 0,
-      i3t: 0,
+ 	  i2: 0,
+ 	  i3: 0,
 	  i4: 0,
-      i4t: 0
- 
-    
     }
   },
+ })
 
-    computed: {
-    i1a() {
-      return this.i1t.toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")
-    },
-	 i2a() {
-      return this.i2t.toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")
-    },
-	 i3a() {
-      return this.i3t.toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")
-    },
-	 i4a() {
-      return this.i4t.toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")
+app.component('animated-integer', {
+  template: '<span>{{ fullValue }}</span>',
+  props: {
+    value: {
+      type: Number,
+      required: true
+    }
+  },
+  data() {
+    return {
+      tweeningValue: 0
+    }
+  },
+  computed: {
+    fullValue() {
+   //   return Math.floor(this.tweeningValue)
+	  return Math.floor(this.tweeningValue).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")
+    }
+  },
+  methods: {
+    tween(newValue, oldValue) {
+      gsap.to(this.$data, {
+        duration: 0.5,
+        tweeningValue: newValue,
+        ease: 'sine'
+      })
     }
   },
   watch: {
-    i1(newValue) {
-      gsap.to(this.$data, { duration: 0.5, i1t: newValue })
-    },
-	   i2(newValue) {
-      gsap.to(this.$data, { duration: 0.5, i2t: newValue })
-    },
-	  i3(newValue) {
-      gsap.to(this.$data, { duration: 0.5, i3t: newValue })
-    },
-	  i4(newValue) {
-      gsap.to(this.$data, { duration: 0.5, i4t: newValue })
+    value(newValue, oldValue) {
+      this.tween(newValue, oldValue)
     }
+  },
+  mounted() {
+    this.tween(this.value, 0)
   }
-  
 })
 
 const vm = app.mount('#container2')

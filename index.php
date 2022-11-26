@@ -203,8 +203,8 @@ if (isset($_GET['update'])) {
 					<td><center><h5>Факт</h5></center></td>
 				  </tr>
 				  <tr>
-					<td><center><h3 id="a1">0</h3></center></td>
-					<td><center><h3 id="a2">0</h3></center></td>
+					<td><center><h3 id="a1">0</animated-integer> </h3></center></td>
+					<td><center><h3 id="a2">0</animated-integer> </h3></center></td>
 				  </tr>
 				</table>
 		  

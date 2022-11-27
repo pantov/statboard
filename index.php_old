@@ -5,6 +5,8 @@
    return $arr;
   }
 
+
+
 if (isset($_GET['update'])) {
   $xml="http://i48s-d-db1/ina/st/hs/sttst/data";
   $objxml = get_data($xml);

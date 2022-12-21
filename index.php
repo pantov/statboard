@@ -167,14 +167,14 @@ if (isset($_GET['update'])) {
 					<td><center><p>по рядовым сотрудникам</p></center></td>
 				  </tr>
 				  <tr>
-					<td colspan="2" align="center"><h5>9 мес. 2021 года</h5></td>
+					<td colspan="2" align="center"><h5>2021 год</h5></td>
 				  </tr>				  
 				  <tr>
 					<td><center><h3 id="i1"> <animated-integer :value="i1"></animated-integer> </h3></center></td>
 					<td><center><h3 id="i2"> <animated-integer :value="i2"></animated-integer> </h3></center></td>
 				  </tr>
 				  <tr>
-					<td colspan="2" align="center"><h5>9 мес. 2022 года</h5></td>
+					<td colspan="2" align="center"><h5>2022 год</h5></td>
 				  </tr>				  
 				  <tr>
 					<td><center><h3 id="i3"> <animated-integer :value="i3"></animated-integer> </h3></center></td>

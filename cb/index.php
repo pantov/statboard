@@ -6,7 +6,7 @@
   }
 
 if (isset($_GET['update'])) {
-  $xml="http://i48s-d-db1/ina/st/hs/sttst/data_cb";
+  $xml="http://i48s-d-db1/ina/st/hs/sttst/data/2";
   $objxml = get_data($xml);
   if ($objxml) {$objxml->saveXML("data.xml");}
 };
@@ -113,8 +113,8 @@ if (isset($_GET['update'])) {
           $menu1.='<a class="dropdown-item" href="#" onclick="Paint1(\''
 		  .$obj->pck[$i]->y.'\','
 		  .$obj->pck[$i]->a1.','.$obj->pck[$i]->a2.','		  
-		  .$obj->pck[$i]->b1.','.$obj->pck[$i]->b2.','		  
-		  .$obj->pck[$i]->c1.','.$obj->pck[$i]->c2.','		  
+		  .$obj->pck[$i]->b1.','.$obj->pck[$i]->b2.','.$obj->pck[$i]->b3.','
+		  .$obj->pck[$i]->c1.','.$obj->pck[$i]->c2.','.$obj->pck[$i]->c3.',' 
 		  .$obj->pck[$i]->d1.','.$obj->pck[$i]->e1.','		  
 		  .$obj->pck[$i]->f1.','.$obj->pck[$i]->f2.','.$obj->pck[$i]->f3.','		  
 		  .$obj->pck[$i]->g1.','.$obj->pck[$i]->g2.','		  
@@ -128,8 +128,8 @@ if (isset($_GET['update'])) {
           $menu1.='<a class="dropdown-item" href="#" onclick="Paint1(\''
 		  .$obj->pck[$i]->y.'\','
 		  .$obj->pck[$i]->a1.','.$obj->pck[$i]->a2.','		  
-		  .$obj->pck[$i]->b1.','.$obj->pck[$i]->b2.','		  
-		  .$obj->pck[$i]->c1.','.$obj->pck[$i]->c2.','		  
+		  .$obj->pck[$i]->b1.','.$obj->pck[$i]->b2.','.$obj->pck[$i]->b3.','
+		  .$obj->pck[$i]->c1.','.$obj->pck[$i]->c2.','.$obj->pck[$i]->c3.',' 
 		  .$obj->pck[$i]->d1.','.$obj->pck[$i]->e1.','		  
 		  .$obj->pck[$i]->f1.','.$obj->pck[$i]->f2.','.$obj->pck[$i]->f3.','		  
 		  .$obj->pck[$i]->g1.','.$obj->pck[$i]->g2.','		  
@@ -168,14 +168,14 @@ if (isset($_GET['update'])) {
 					<td><center><p>по рядовым сотрудникам</p></center></td>
 				  </tr>
 				  <tr>
-					<td colspan="2" align="center"><h5>11 мес. 2021 года</h5></td>
+					<td colspan="2" align="center"><h5>2021 год</h5></td>
 				  </tr>				  
 				  <tr>
 					<td><center><h3 id="i1"> <animated-integer :value="i1"></animated-integer> </h3></center></td>
 					<td><center><h3 id="i2"> <animated-integer :value="i2"></animated-integer> </h3></center></td>
 				  </tr>
 				  <tr>
-					<td colspan="2" align="center"><h5>11 мес. 2022 года</h5></td>
+					<td colspan="2" align="center"><h5>2022 год</h5></td>
 				  </tr>				  
 				  <tr>
 					<td><center><h3 id="i3"> <animated-integer :value="i3"></animated-integer> </h3></center></td>
@@ -237,10 +237,12 @@ if (isset($_GET['update'])) {
 				  <tr>
 					<td><center><h5>Руководители</h5></center></td>
 					<td><center><h5>Специалисты</h5></center></td>
+					<td><center><h5>Обслуживающ. персонал</h5></center></td>
 				  </tr>
 				  <tr>
 					<td><center><h3 id="b1">0</h3></center></td>
 					<td><center><h3 id="b2">0</h3></center></td>
+					<td><center><h3 id="b3">0</h3></center></td>
 				  </tr>
 				</table>
 		  
@@ -257,12 +259,14 @@ if (isset($_GET['update'])) {
 			 
 				<table text-align="center" style="width:100%">
 				  <tr>
-					<td><center><h5>Назначено</h5></center></td>
-					<td><center><h5>Уволено</h5></center></td>
-				  </tr>
+					<td><center><h5>Назн.</h5></center></td>
+					<td><center><h5>Увол.</h5></center></td>
+					<td><center><h5>Коэф.</h5></center></td>
+				</tr>
 				  <tr>
 					<td><center><h3 id="c1">0</h3></center></td>
 					<td><center><h3 id="c2">0</h3></center></td>
+					<td><center><h3 id="c3">0</h3></center></td>
 				  </tr>
 				</table>
 		  
@@ -479,8 +483,8 @@ const vm = app.mount('#container2')
 		  $Firts1='Paint1(\''
 		  .$obj->pck[0]->y.'\','
 		  .$obj->pck[0]->a1.','.$obj->pck[0]->a2.','		  
-		  .$obj->pck[0]->b1.','.$obj->pck[0]->b2.','		  
-		  .$obj->pck[0]->c1.','.$obj->pck[0]->c2.','		  
+		  .$obj->pck[0]->b1.','.$obj->pck[0]->b2.','.$obj->pck[0]->b3.','		  
+		  .$obj->pck[0]->c1.','.$obj->pck[0]->c2.','.$obj->pck[0]->c3.','		  
 		  .$obj->pck[0]->d1.','.$obj->pck[0]->e1.','		  
 		  .$obj->pck[0]->f1.','.$obj->pck[0]->f2.','.$obj->pck[0]->f3.','		  
 		  .$obj->pck[0]->g1.','.$obj->pck[0]->g2.','		  
@@ -704,15 +708,17 @@ Chart2 = new Chart($ctx2, {
     </script>
 	
 	<script>
-    function Paint1(name,a1,a2,b1,b2,c1,c2,d1,e1,f1,f2,f3,g1,g2,h1,h2,i1,i2,i3,i4,j1,j2,j3,j4,k1,k2,k3,k4,k5,l1,l2,l3,l4,l5,l6,l7,l8,l9) {
+    function Paint1(name,a1,a2,b1,b2,b3,c1,c2,c3,d1,e1,f1,f2,f3,g1,g2,h1,h2,i1,i2,i3,i4,j1,j2,j3,j4,k1,k2,k3,k4,k5,l1,l2,l3,l4,l5,l6,l7,l8,l9) {
 
 	document.getElementById('name1').innerHTML = name;
 	document.getElementById('a1').innerHTML = a1;
 	document.getElementById('a2').innerHTML = a2;
 	document.getElementById('b1').innerHTML = b1;
 	document.getElementById('b2').innerHTML = b2;
+	document.getElementById('b3').innerHTML = b3;
 	document.getElementById('c1').innerHTML = c1;
 	document.getElementById('c2').innerHTML = c2;  		
+	document.getElementById('c3').innerHTML = c3;  		
    	document.getElementById('d1').innerHTML = d1;
 	document.getElementById('e1').innerHTML = e1;
 	document.getElementById('f1').innerHTML = f1;

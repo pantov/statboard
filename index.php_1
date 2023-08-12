@@ -1,4 +1,5 @@
 <?
+
   function get_data($src)
   {
    $arr = simplexml_load_file($src);

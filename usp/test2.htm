@@ -1,0 +1,136 @@
+<
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <title>HR-аналитика</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+ 
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+   
+   <script src="https://unpkg.com/vue@3.2.36"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
+--> 
+  <script src="scripts/jquery.min.js"></script>
+  <script src="scripts/popper.min.js"></script>
+  
+  <link rel="stylesheet" href="scripts/bootstrap.min.css">
+  <script src="scripts/bootstrap.min.js"></script>
+ 
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.7/chartjs-plugin-annotation.min.js"></script>
+  
+   <script src="scripts/vue.global.prod.js"></script>
+   <script src="scripts/gsap.min.js"></script>
+
+   <style>
+
+body, html{
+  background: #181E24;
+  padding-top: 10px;
+}
+
+.wrapper{
+  width:80%;
+  display:block;
+  overflow:hidden;
+  margin:0 auto;
+  padding: 20px;
+  background:#fff;
+  border-radius:4px;
+}
+
+canvas{
+  background:#fff;
+  height:400px;
+}
+
+h1{
+  font-family: Roboto;
+  color: #fff;
+  margin-top:50px;
+  font-weight:200;
+  text-align: center;
+  display: block;
+  text-decoration: none;
+}
+   </style>
+ 
+</head>
+<body>
+
+
+  <div style="width: 75%">
+    <canvas id="canvas"></canvas>
+  </div>
+	
+		<div class="wrapper">
+			<canvas id="myChart"></canvas>
+			</div>
+			
+			<h1>Chart JS Multi-Axis with suggestedMin, suggestedMax</h1>
+			<div class="wrapper">
+			<canvas id="Chart1"></canvas>
+			</div>
+
+
+
+    <script type="text/javascript">
+
+	
+ 
+
+var ctx = document.getElementById("canvas").getContext("2d");
+new Chart(ctx, {
+    type: "line",
+    data: {
+      labels: ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"],
+      datasets: [
+        {
+          data: [12, 3, 2, 1, 8, 8, 2, 2, 3, 5, 7, 1]
+        }
+      ]
+    },
+    options: {
+      annotation: {
+        annotations: [
+          {
+            type: "line",
+            mode: "vertical",
+            scaleID: "x-axis-0",
+            value: "MAR",
+            borderColor: "red",
+            label: {
+              content: "TODAY",
+              enabled: true,
+              position: "top"
+            }
+          }
+        ]
+      }
+    }
+  }
+);
+
+
+
+
+
+
+
+    </script>
+	
+	
+
+ <footer>
+ 
+ </footer>
+</body>
+</html>
+    

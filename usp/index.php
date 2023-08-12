@@ -16,7 +16,7 @@ if (isset($_GET['update'])) {
   if ($objxml) {$objxml->saveXML("data.xml");}
 };
   $obj = get_data("data.xml");
-  if (!$obj) { die("<h1>Нет данных для отображения</h1>"); 
+  if (!$obj) { die("<h1>Нет данных для отображения </h1>"); 
   
   } else {
     ?>

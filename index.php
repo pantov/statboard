@@ -245,7 +245,7 @@ if (isset($_GET['update'])) {
 			<div  class="card-header text-center"> <h4> Текучесть, чел. </h4> </div>
 				<table text-align="center" style="width:100%">
 				  <tr>
-                                        <center><h5>2022 год</h5></center>
+                                        <center><h5>2023 год</h5></center>
 				  </tr>
 				  <tr>
 					<td><center><h5>Назначено</h5></center></td>

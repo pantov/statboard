@@ -566,9 +566,17 @@ function PaintChart5(k0,k1,k2,k3,k4,k5,k6,k7,k8,k9,k10) {
    Chart5.data.datasets[0].data = [{x: 1, y: k1}, {x: 2, y: k2}, {x: 3, y: k3}, {x: 4, y: k4},{x: 5, y: k5},{x: 6, y: k6}, {x: 7, y: k7}, {x: 8, y: k8}, {x: 9, y: k9},{x: 10, y: k10}];
    //Chart4.config.options.annotations[0].value=4;
    var razdel = (k0-21000)/(71000-21000)*9+1;
-   if (k0<21000) razdel=1;
-   if (k0>71000) razdel=10;
- 
+  // if (k0<21000) razdel=1;
+  // if (k0>71000) razdel=10;
+   var R = k0/1000;
+   var razdel=1;
+   if (R <  10)  razdel =  1 + ( 1 / 40 ) * 0;
+   if (R <  20)  razdel =  1 + ( 1 / 40 ) * R;
+   if (R <  50)  razdel =  1 + ( 1 / 40 ) * (   20 + 8 * ( R - 20 ) );
+   if (R <  75)  razdel =  1 + ( 1 / 40 ) * ( 260 + 4 * ( R - 50 ) );
+   if (R > 75)   razdel =  1 + ( 1 / 40 ) * 360;
+
+
  //  var razdel = Math.floor(Math.random() * 10); 
   //debugger;
    var     options = {
@@ -629,7 +637,8 @@ function PaintChart5(k0,k1,k2,k3,k4,k5,k6,k7,k8,k9,k10) {
             borderWidth: 3,
             borderColor: "yellow",
 			label: {
-              content: numberWithSpaces(k0)+' руб.',
+       // content: numberWithSpaces(k0)+' руб.',
+        content: razdel,
               enabled: true,
               position: "center",
               xAdjust: 40,

@@ -569,13 +569,13 @@ function PaintChart5(k0,k1,k2,k3,k4,k5,k6,k7,k8,k9,k10) {
   // if (k0<21000) razdel=1;
   // if (k0>71000) razdel=10;
    var R = k0/1000;
-   var razdel=1;
-   if (R <  10)  razdel =  1 + ( 1 / 40 ) * 0;
-   if (R <  20)  razdel =  1 + ( 1 / 40 ) * R;
-   if (R <  50)  razdel =  1 + ( 1 / 40 ) * (   20 + 8 * ( R - 20 ) );
-   if (R <  75)  razdel =  1 + ( 1 / 40 ) * ( 260 + 4 * ( R - 50 ) );
-   if (R > 75)   razdel =  1 + ( 1 / 40 ) * 360;
-
+   var X=1;
+   if (R <= 10)  X =  1 + ( 1 / 40 ) * 0;
+   if ((10 < R) && (R <= 20))  X =  1 + ( 1 / 40 ) * R;
+   if ((20 < R) && (R <= 50))  X =  1 + ( 1 / 40 ) * (   20 + 8 * ( R - 20 ) );
+   if ((50 < R) && (R <= 75))  X =  1 + ( 1 / 40 ) * ( 260 + 4 * ( R - 50 ) );
+   if (R > 75)   X =  1 + ( 1 / 40 ) * 360;
+   X = X.toFixed(2);
 
  //  var razdel = Math.floor(Math.random() * 10); 
   //debugger;
@@ -633,12 +633,12 @@ function PaintChart5(k0,k1,k2,k3,k4,k5,k6,k7,k8,k9,k10) {
             type: "line",
             mode: "vertical",
             scaleID: "x-axis-0",
-            value:  razdel,
+            value:  X,
             borderWidth: 3,
             borderColor: "yellow",
 			label: {
        // content: numberWithSpaces(k0)+' руб.',
-        content: razdel,
+        content: numberWithSpaces(k0)+' руб. ('+X+')',
               enabled: true,
               position: "center",
               xAdjust: 40,

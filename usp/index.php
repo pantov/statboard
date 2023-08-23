@@ -637,8 +637,8 @@ function PaintChart5(k0,k1,k2,k3,k4,k5,k6,k7,k8,k9,k10) {
             borderWidth: 3,
             borderColor: "yellow",
 			label: {
-       // content: numberWithSpaces(k0)+' руб.',
-        content: numberWithSpaces(k0)+' руб. ('+X+')',
+        content: numberWithSpaces(k0)+' руб.',
+       // content: numberWithSpaces(k0)+' руб. ('+X+')',
               enabled: true,
               position: "center",
               xAdjust: 40,

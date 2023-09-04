@@ -225,7 +225,7 @@ if (isset($_GET['update'])) {
 	   
 			<p></p>
 			<div class="card border bg-dark text-white  rounded" >
-			<div  class="card-header text-center"> <h4> Численность, чел. </h4> </div>
+			<div  class="card-header text-center"> <h4> Численность, сотр. </h4> </div>
 			 
 				<table text-align="center" style="width:100%">
 				  <tr>
@@ -243,7 +243,7 @@ if (isset($_GET['update'])) {
        <div class="col-lg-6"><!-- b -->
 			<p></p>
 			<div class="card border bg-dark text-white  rounded" >
-			<div  class="card-header text-center"> <h4> Должности, чел. </h4> </div>
+			<div  class="card-header text-center"> <h4> Должности, сотр. </h4> </div>
 				<table text-align="center" style="width:100%">
 				  <tr>
 					<td><center><h5>АУП</h5></center></td>
@@ -265,7 +265,7 @@ if (isset($_GET['update'])) {
        <div class="col-lg-4"><!-- c -->
 			<p></p>
 			<div class="card border bg-dark text-white  rounded" >
-			<div  class="card-header text-center"> <h4 id="tec"> Текучесть за <?echo $gods?> год, чел.</h4></div>
+			<div  class="card-header text-center"> <h4 id="tec"> Текучесть за период, сотр.</h4></div>
 				<table text-align="center" style="width:100%">
 				  <tr>
 					<td><center><h5>Назначено</h5></center></td>
@@ -282,7 +282,7 @@ if (isset($_GET['update'])) {
        <div class="col-lg-4"><!-- d -->
 			<p></p>
 			<div class="card border bg-dark text-white  rounded" >
-			<div  class="card-header text-center"> <h4> Средний возраст </h4> </div>
+			<div  class="card-header text-center"> <h4> Средний возраст, лет. </h4> </div>
 				<table text-align="center" style="width:100%">
 				<tr>
 					<td><center><h5> &nbsp </h5></center></td>
@@ -319,7 +319,7 @@ if (isset($_GET['update'])) {
        <div class="col-lg-4"><!-- Chart1-->
 	   <p></p>
 			<div class="card border bg-dark text-white  rounded" >
-			<div  class="card-header text-center"> <h4>Среднесписочная численность <br> и темп её роста</h4></div>
+			<div  class="card-header text-center"> <h4>Среднесписочная численность, сотр. <br> и темп её роста, %</h4></div>
      	     <div class="container">
               <canvas id="Chart1" width="200" height="100"></canvas>
 	          <p></p>
@@ -330,7 +330,7 @@ if (isset($_GET['update'])) {
        <div class="col-lg-4"><!-- Chart2-->
 	   <p></p>
 			<div  class="card border bg-dark text-white  rounded" >
-			<div  class="card-header text-center"> <h4>Среднемесячная з/плата <br> и темп её роста </h4></div>
+			<div  class="card-header text-center"> <h4>Среднемесячная з/плата, руб. <br> и темп её роста, % </h4></div>
      	     <div class="container">
               <canvas id="Chart2" width="200" height="100"></canvas>
 	          <p></p>
@@ -341,7 +341,7 @@ if (isset($_GET['update'])) {
 	   <div class="col-lg-4"><!--Chart3 -->
 	   <p></p>
 			<div  class="card border bg-dark text-white  rounded" >
-			<div  class="card-header text-center"> <h4>Структура з/платы</h4></div>
+			<div  class="card-header text-center"> <h4>Структура з/платы, %</h4></div>
      	     <div class="container">
               <canvas id="Chart3" width="200" height="100"></canvas>
 	          <p></p>
@@ -355,7 +355,7 @@ if (isset($_GET['update'])) {
         <div class="col-lg-4"><!-- Chart4 -->
 		  <p></p>
 			<div id="card_j1" class="card border bg-dark text-white  rounded" >
-			<div  class="card-header text-center"> <h4> ПДД в структуре заработной платы</h4> </div>
+			<div  class="card-header text-center"> <h4> ПДД в структуре заработной платы, %</h4> </div>
      	     <div class="container">
               <canvas id="Chart4" width="200" height="100"></canvas>
 	          <p></p>
@@ -367,7 +367,7 @@ if (isset($_GET['update'])) {
         <div class="col-lg-4"><!-- Chart5 -->
 		<p></p>
 			<div  class="card border bg-dark text-white  rounded" >
-			<div  class="card-header text-center"> <h4>Работники по диапазонам<br>заработной платы, чел. <span class="colortext">(т. руб.)</span></h4></div>
+			<div  class="card-header text-center"> <h4>Работники по диапазонам з/платы, сотр. / тыс. руб.</h4></div>
      	     <div class="container">
               <canvas id="Chart5" width="200" height="100"></canvas>
 	          <p></p>

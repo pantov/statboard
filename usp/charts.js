@@ -723,7 +723,8 @@ Chart6 = new Chart($ctx6, {
                           ctx.fillText(numberWithSpaces(dataset.data[i]), model.x, y_pos);
                         }
 						if (dataset.label=="2") {
-                         // if (dataset.data[i]>0) 	
+                         // if (dataset.data[i]>0)
+                          y_pos = model.y - 10; 	
                           ctx.fillText(dataset.data[i], model.x, y_pos);
                         }
                         if (dataset.label=="3") {

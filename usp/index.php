@@ -71,6 +71,12 @@ if (isset($_GET['update'])) {
    .colortext {
      color: #2FA6DA; /* Красный цвет выделения */
    }
+   .colorback {
+    background-color: yellow; 
+   }
+   .colorback2 {
+    background-color: #bf9000; 
+   }
   
   </style>
 </head>
@@ -367,7 +373,7 @@ if (isset($_GET['update'])) {
         <div class="col-lg-4"><!-- Chart5 -->
 		<p></p>
 			<div  class="card border bg-dark text-white  rounded" >
-			<div  class="card-header text-center"> <h4>Работники по диапазонам з/платы, сотр. / тыс. руб.</h4></div>
+			<div  class="card-header text-center"> <h4>Работники по диапазонам з/платы, сотр. / тыс. руб.<br> <span class="colorback">&nbsp&nbsp</span> - Медианная з/плата, руб.</h4></div>
      	     <div class="container">
               <canvas id="Chart5" width="200" height="100"></canvas>
 	          <p></p>
@@ -379,7 +385,7 @@ if (isset($_GET['update'])) {
 		<div class="col-lg-4"><!-- Chart6 -->
 		<p></p>
 			<div  class="card border bg-dark text-white  rounded" >
-			<div  class="card-header text-center"> <h4>Доля работников получавших МРОТ </h4></div>
+			<div  class="card-header text-center"> <h4>Доля работников всего и получавших МРОТ, сотр. <br> <span class="colorback2">&nbsp&nbsp</span> - доля МРОТ, % </h4></div>
      	     <div class="container">
               <canvas id="Chart6" width="200" height="100"></canvas>
 	          <p></p>
@@ -499,8 +505,8 @@ const vm = app.mount('#container2')
 	document.getElementById('b1').innerHTML = numberWithSpaces(b1);
 	document.getElementById('b2').innerHTML = numberWithSpaces(b2);
 	document.getElementById('b3').innerHTML = numberWithSpaces(b3);
-	document.getElementById('c1').innerHTML = c1;
-	document.getElementById('c2').innerHTML = c2;  		
+	document.getElementById('c1').innerHTML = numberWithSpaces(c1);
+	document.getElementById('c2').innerHTML = numberWithSpaces(c2);  		
    	document.getElementById('d1').innerHTML = d1;
 	document.getElementById('e1').innerHTML = e1;
 	document.getElementById('e2').innerHTML = e2;

@@ -40,7 +40,7 @@ Chart1 = new Chart($ctx1, {
                         ctx.fillStyle = 'white';
 						//ctx.font = 'bold 12px "Helvetica Neue", "Helvetica", "Arial", sans-serif';
 						//debugger;
-                        var y_pos = model.y - 5;
+                        var y_pos = model.y + 20;
                         if ((scale_max - model.y) / scale_max >= 0.93)
                             y_pos = model.y + 20; 
 						if (dataset.label=="1")
@@ -152,7 +152,7 @@ Chart2 = new Chart($ctx2, {
                         var model = dataset._meta[Object.keys(dataset._meta)[0]].data[i]._model,
                             scale_max = dataset._meta[Object.keys(dataset._meta)[0]].data[i]._yScale.maxHeight;
                         ctx.fillStyle = 'white';
-                        var y_pos = model.y - 5;
+                        var y_pos = model.y +20;
                         if ((scale_max - model.y) / scale_max >= 0.90)
                             y_pos = model.y + 20; 
 						if (dataset.label=="1")
@@ -314,7 +314,7 @@ Chart3 = new Chart($ctx3, {
                             if (dataset.data[i]>10)
                             ctx.fillText(dataset.data[i]+" %", model.x, y_pos);
                             else
-                            ctx.fillText(dataset.data[i]+" %", model.x+75, y_pos);
+                            ctx.fillText(dataset.data[i]+" %", model.x+65, y_pos);
                         }
                         
                     }
@@ -413,7 +413,7 @@ Chart4 = new Chart($ctx4, {
 			"yAxisID":"left"
         },
 		{
-            label: ' - бюджет   ',
+            label: ' - Бюджет   ',
             data: [88,87,82],
             backgroundColor: '#fe5f35',
             borderColor:   '#fe5f35',
@@ -713,14 +713,14 @@ Chart6 = new Chart($ctx6, {
                         var model = dataset._meta[Object.keys(dataset._meta)[0]].data[i]._model,
                             scale_max = dataset._meta[Object.keys(dataset._meta)[0]].data[i]._yScale.maxHeight;
                         ctx.fillStyle = 'white';
-                        var y_pos = model.y - 5;
+                        var y_pos = model.y + 25;
                        // var procent  = this.data.datasets[2];
 						debugger;
                         if ((scale_max - model.y) / scale_max >= 0.93)
                             y_pos = model.y + 25; 
 						if (dataset.label=="%")	{
                           if (dataset.data[i]>0) 	
-                          ctx.fillText(dataset.data[i], model.x, y_pos);
+                          ctx.fillText(numberWithSpaces(dataset.data[i]), model.x, y_pos);
                         }
 						if (dataset.label=="2") {
                          // if (dataset.data[i]>0) 	

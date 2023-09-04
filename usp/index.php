@@ -128,7 +128,7 @@ if (isset($_GET['update'])) {
          
       $gods=substr($obj->pck[0]->date,0,4);
       $kvartalm = substr($obj->pck[0]->date,5,2);
-      if ($kvartalm=='01') $kvartal='1'; if ($kvartalm=='04') $kvartal='2'; if ($kvartalm=='07') $kvartal='3'; if ($kvartalm=='10') $kvartal='4';
+      if ($kvartalm=='01') $kvartal='1 квартал'; if ($kvartalm=='04') $kvartal='1 полугодие'; if ($kvartalm=='07') $kvartal='9 месяцев'; if ($kvartalm=='10') $kvartal='';
 		  $i=0;
 		  $menu1=''; 
 		  
@@ -183,7 +183,7 @@ if (isset($_GET['update'])) {
        <div class="col-lg-12"><!-- i0 -->
 	   		<p></p>
 			<div id="card_i1" class="card border bg-dark text-white  rounded" >
-			<div  class="card-header text-center"> <h4> АНАЛИТИКА<br>численности и заработной платы<br>за <?echo $gods-2?> – <?echo $gods?> гг <br>по состоянию за 2 квартал</h4> </div>
+			<div  class="card-header text-center"> <h4> АНАЛИТИКА<br>численности и заработной платы<br>по итогам <?echo $gods?> года  <br>с аналогичными данными за предыдущие года</h4> </div>
 			 
 			</div>	
 			<p></p>	  
@@ -203,14 +203,14 @@ if (isset($_GET['update'])) {
 					<td><center><p>Все работники <br> (за исключением АУП)</p></center></td>
 				  </tr>
 				  <tr>
-					<td colspan="2" align="center"><h5>2 квартал <?echo $gods-1?> года</h5></td>
+					<td colspan="2" align="center"><h5> <?echo $kvartal?> <?echo $gods-1?> год</h5></td>
 				  </tr>				  
 				  <tr>
 					<td><center><h3 id="i1"> <animated-integer :value="i1"></animated-integer> </h3></center></td>
 					<td><center><h3 id="i2"> <animated-integer :value="i2"></animated-integer> </h3></center></td>
 				  </tr>
 				  <tr>
-					<td colspan="2" align="center"><h5>2 квартал <?echo $gods?> года</h5></td>
+					<td colspan="2" align="center"><h5><?echo $kvartal?> <?echo $gods?> год</h5></td>
 				  </tr>				  
 				  <tr>
 					<td><center><h3 id="i3"> <animated-integer :value="i3"></animated-integer> </h3></center></td>

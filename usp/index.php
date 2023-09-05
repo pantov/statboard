@@ -71,11 +71,11 @@ if (isset($_GET['update'])) {
    .colortext {
      color: #2FA6DA; /* Красный цвет выделения */
    }
-   .colorback {
-    background-color: yellow; 
+   .color2 {
+    color: yellow; 
    }
-   .colorback2 {
-    background-color: #bf9000; 
+   .color3 {
+    color: #bf9000; 
    }
   
   </style>
@@ -347,7 +347,7 @@ if (isset($_GET['update'])) {
 	   <div class="col-lg-4"><!--Chart3 -->
 	   <p></p>
 			<div  class="card border bg-dark text-white  rounded" >
-			<div  class="card-header text-center"> <h4>Структура з/платы, %</h4></div>
+			<div  class="card-header text-center"> <h4>Структура з/платы, % <br> <span style="color:#548235">■</span> - Оклад. <span style="color:#bf9000">■</span> - Комп. <span style="color:#fe5f35">■</span> - Стим. <span style="color:#952101">■</span> - Проч.</h4></div>
      	     <div class="container">
               <canvas id="Chart3" width="200" height="100"></canvas>
 	          <p></p>
@@ -361,7 +361,7 @@ if (isset($_GET['update'])) {
         <div class="col-lg-4"><!-- Chart4 -->
 		  <p></p>
 			<div id="card_j1" class="card border bg-dark text-white  rounded" >
-			<div  class="card-header text-center"> <h4> ПДД в структуре заработной платы, %</h4> </div>
+			<div  class="card-header text-center"> <h4> ПДД в структуре заработной платы, % <br> <span style="color:#bf9000">■</span> - ПДД <span style="color:#fe5f35">■</span> - Бюджет </h4> </div>
      	     <div class="container">
               <canvas id="Chart4" width="200" height="100"></canvas>
 	          <p></p>
@@ -369,11 +369,10 @@ if (isset($_GET['update'])) {
 			</div>	
 		 <p></p>
 		</div>
-
         <div class="col-lg-4"><!-- Chart5 -->
 		<p></p>
 			<div  class="card border bg-dark text-white  rounded" >
-			<div  class="card-header text-center"> <h4>Работники по диапазонам з/платы, сотр. / тыс. руб.<br> <span class="colorback">&nbsp&nbsp</span> - Медианная з/плата, руб.</h4></div>
+			<div  class="card-header text-center"> <h4>Работники по диапазонам з/платы, сотр. / тыс. руб.<br> <span style="color:yellow">■</span> - Медианная з/плата, руб.</h4></div>
      	     <div class="container">
               <canvas id="Chart5" width="200" height="100"></canvas>
 	          <p></p>
@@ -385,7 +384,7 @@ if (isset($_GET['update'])) {
 		<div class="col-lg-4"><!-- Chart6 -->
 		<p></p>
 			<div  class="card border bg-dark text-white  rounded" >
-			<div  class="card-header text-center"> <h4>Доля работников всего и получавших МРОТ, сотр. <br> <span class="colorback2">&nbsp&nbsp</span> - доля МРОТ, % </h4></div>
+			<div  class="card-header text-center"> <h4>Доля работников всего и получавших МРОТ, сотр. <br> <span style="color:#bf9000">■</span> - доля МРОТ, % </h4></div>
      	     <div class="container">
               <canvas id="Chart6" width="200" height="100"></canvas>
 	          <p></p>

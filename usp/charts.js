@@ -40,9 +40,9 @@ Chart1 = new Chart($ctx1, {
                         ctx.fillStyle = 'white';
 						//ctx.font = 'bold 12px "Helvetica Neue", "Helvetica", "Arial", sans-serif';
 						//debugger;
-                        var y_pos = model.y + 20;
+                        var y_pos = model.y + 25;
                         if ((scale_max - model.y) / scale_max >= 0.93)
-                            y_pos = model.y + 20; 
+                            y_pos = model.y + 25; 
 						if (dataset.label=="1")
                         if (dataset.data[i]>0) 	
                         ctx.fillText(numberWithSpaces(dataset.data[i]), model.x, y_pos);
@@ -152,9 +152,9 @@ Chart2 = new Chart($ctx2, {
                         var model = dataset._meta[Object.keys(dataset._meta)[0]].data[i]._model,
                             scale_max = dataset._meta[Object.keys(dataset._meta)[0]].data[i]._yScale.maxHeight;
                         ctx.fillStyle = 'white';
-                        var y_pos = model.y +20;
+                        var y_pos = model.y +25;
                         if ((scale_max - model.y) / scale_max >= 0.90)
-                            y_pos = model.y + 20; 
+                            y_pos = model.y + 25; 
 						if (dataset.label=="1")
                         if (dataset.data[i]>0) 	
                         ctx.fillText(numberWithSpaces(dataset.data[i]), model.x, y_pos);
@@ -298,6 +298,7 @@ Chart3 = new Chart($ctx3, {
                 ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontFamily, 'normal', Chart.defaults.global.defaultFontFamily);
                 ctx.textAlign = 'center';
                 ctx.textBaseline = 'bottom';
+                ctx.font = 'bold 20px "Helvetica Neue", "Helvetica", "Arial", sans-serif';
                 this.data.datasets.forEach(function (dataset) {
                     for (var i = 0; i < dataset.data.length; i++) {
                         var model = dataset._meta[Object.keys(dataset._meta)[0]].data[i]._model,
@@ -322,7 +323,7 @@ Chart3 = new Chart($ctx3, {
             }
         },		
 		legend: {
-                display: true,
+                display: false,
                 labels: {
                     fontColor: 'white',
 					fontSize: 20,
@@ -406,6 +407,7 @@ Chart4 = new Chart($ctx4, {
       //  },
             {
             label: '- ПДД    ',
+          //  hidden: true,
             data: [20,30,80],
 			backgroundColor: '#bf9000',
             borderColor:   '#bf9000',
@@ -414,6 +416,7 @@ Chart4 = new Chart($ctx4, {
         },
 		{
             label: ' - Бюджет   ',
+           // hidden: true,
             data: [88,87,82],
             backgroundColor: '#fe5f35',
             borderColor:   '#fe5f35',
@@ -433,6 +436,7 @@ Chart4 = new Chart($ctx4, {
                 ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontFamily, 'normal', Chart.defaults.global.defaultFontFamily);
                 ctx.textAlign = 'center';
                 ctx.textBaseline = 'bottom';
+                ctx.font = 'bold 20px "Helvetica Neue", "Helvetica", "Arial", sans-serif';
                 this.data.datasets.forEach(function (dataset) {
                     for (var i = 0; i < dataset.data.length; i++) {
                         var model = dataset._meta[Object.keys(dataset._meta)[0]].data[i]._model,
@@ -452,7 +456,7 @@ Chart4 = new Chart($ctx4, {
             }
         },		
 		legend: {
-                display: true,
+                display: false,
                 labels: {
                     fontColor: 'white',
 					fontSize: 20,

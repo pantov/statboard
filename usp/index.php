@@ -384,7 +384,7 @@ if (isset($_GET['update'])) {
 		<div class="col-lg-4"><!-- Chart6 -->
 		<p></p>
 			<div  class="card border bg-dark text-white  rounded" >
-			<div  class="card-header text-center"> <h4>Доля работников всего и получавших МРОТ, сотр. <br> <span style="color:#bf9000">■</span> - доля МРОТ, % </h4></div>
+			<div  class="card-header text-center"> <h4>Работников всего и получавших МРОТ, сотр. <br> <span style="color:#bf9000">■</span> - доля МРОТ, % </h4></div>
      	     <div class="container">
               <canvas id="Chart6" width="200" height="100"></canvas>
 	          <p></p>

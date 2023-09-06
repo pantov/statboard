@@ -129,6 +129,7 @@ if (isset($_GET['update'])) {
       $gods=substr($obj->pck[0]->date,0,4);
       $kvartalm = substr($obj->pck[0]->date,5,2);
       if ($kvartalm=='01') $kvartal='1 квартал'; if ($kvartalm=='04') $kvartal='1 полугодие'; if ($kvartalm=='07') $kvartal='9 месяцев'; if ($kvartalm=='10') $kvartal='';
+      if ($kvartalm=='01') $kvartal2='1 квартала'; if ($kvartalm=='04') $kvartal2='1 полугодия'; if ($kvartalm=='07') $kvartal2='9 месяцев'; if ($kvartalm=='10') $kvartal2='';
 		  $i=0;
 		  $menu1=''; 
 		  
@@ -183,7 +184,7 @@ if (isset($_GET['update'])) {
        <div class="col-lg-12"><!-- i0 -->
 	   		<p></p>
 			<div id="card_i1" class="card border bg-dark text-white  rounded" >
-			<div  class="card-header text-center"> <h4> АНАЛИТИКА<br>численности и заработной платы<br>по итогам <?echo $gods?> года  <br>с аналогичными данными за предыдущие года</h4> </div>
+			<div  class="card-header text-center"> <h4> АНАЛИТИКА<br>численности и заработной платы<br>по итогам <?echo $kvartal2?> <?echo $gods?> года  <br>с аналогичными данными за предыдущие года</h4> </div>
 			 
 			</div>	
 			<p></p>	  
@@ -271,7 +272,7 @@ if (isset($_GET['update'])) {
        <div class="col-lg-4"><!-- c -->
 			<p></p>
 			<div class="card border bg-dark text-white  rounded" >
-			<div  class="card-header text-center"> <h4 id="tec"> Текучесть за период, сотр.</h4></div>
+			<div  class="card-header text-center"> <h4 id="tec"> Текучесть за <?echo $kvartal?> <?echo $gods?> г. сотр.</h4></div>
 				<table text-align="center" style="width:100%">
 				  <tr>
 					<td><center><h5>Назначено</h5></center></td>
@@ -372,7 +373,7 @@ if (isset($_GET['update'])) {
         <div class="col-lg-4"><!-- Chart5 -->
 		<p></p>
 			<div  class="card border bg-dark text-white  rounded" >
-			<div  class="card-header text-center"> <h4>Работники по диапазонам з/платы, сотр. / тыс. руб.<br> <span style="color:yellow">■</span> - Медианная з/плата, руб.</h4></div>
+			<div  class="card-header text-center"> <h4>Работники по уровню зарплаты, сорт./тыс.руб.<br> <span style="color:yellow">■</span> - Медианная з/плата, руб.</h4></div>
      	     <div class="container">
               <canvas id="Chart5" width="200" height="100"></canvas>
 	          <p></p>
@@ -646,8 +647,8 @@ function PaintChart5(k0,k1,k2,k3,k4,k5,k6,k7,k8,k9,k10) {
         content: numberWithSpaces(k0)+' руб.',
        // content: numberWithSpaces(k0)+' руб. ('+X+')',
               enabled: true,
-              position: "center",
-              xAdjust: 40,
+              position: "bottom",
+              xAdjust: -40,
             }
           },
 		  {

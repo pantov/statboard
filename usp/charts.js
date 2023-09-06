@@ -733,7 +733,7 @@ Chart6 = new Chart($ctx6, {
                         }
                         if (dataset.label=="3") {
                             y_pos = scale_max - 3;
-                            ctx.fillText(dataset.data[i]+" %", model.x+ 75, y_pos);
+                            ctx.fillText(dataset.data[i]+" %", model.x + 65, y_pos);
                     }
                     }
                 });               

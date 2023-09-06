@@ -312,7 +312,7 @@ Chart3 = new Chart($ctx3, {
                         //ctx.fillText(dataset.data[i]+" %", model.x, y_pos);
 						//if (dataset.label=="_")
                         if (dataset.data[i]>0) 	{
-                            if (dataset.data[i]>10)
+                            if (dataset.data[i]>6)
                             ctx.fillText(dataset.data[i]+" %", model.x, y_pos);
                             else
                             ctx.fillText(dataset.data[i]+" %", model.x+65, y_pos);

@@ -301,18 +301,20 @@ Chart3 = new Chart($ctx3, {
                 ctx.font = 'bold 20px "Helvetica Neue", "Helvetica", "Arial", sans-serif';
                 this.data.datasets.forEach(function (dataset) {
                     for (var i = 0; i < dataset.data.length; i++) {
-                        var model = dataset._meta[Object.keys(dataset._meta)[0]].data[i]._model,
-                            scale_max = dataset._meta[Object.keys(dataset._meta)[0]].data[i]._yScale.maxHeight;
+                        var model = dataset._meta[Object.keys(dataset._meta)[0]].data[i]._model;
+                        scale_max = dataset._meta[Object.keys(dataset._meta)[0]].data[i]._yScale.maxHeight;
+                       // scale_max2 = dataset._meta[Object.keys(dataset._meta)[0]].data[i];
                         ctx.fillStyle = 'white';
                         var y_pos = model.y + 20;
-						debugger;
+                       // var y_pos = (model.base - model.y) - 10;
+						//debugger;
                         if ((scale_max - model.y) / scale_max >= 0.93)
                             y_pos = model.y + 20; 
 						//if (dataset.label=="%")	
                         //ctx.fillText(dataset.data[i]+" %", model.x, y_pos);
 						//if (dataset.label=="_")
                         if (dataset.data[i]>0) 	{
-                            if (dataset.data[i]>6)
+                            if (dataset.data[i]>10)
                             ctx.fillText(dataset.data[i]+" %", model.x, y_pos);
                             else
                             ctx.fillText(dataset.data[i]+" %", model.x+65, y_pos);
@@ -321,7 +323,8 @@ Chart3 = new Chart($ctx3, {
                     }
                 });               
             }
-        },		
+        },	
+               
 		legend: {
                 display: false,
                 labels: {
@@ -719,7 +722,7 @@ Chart6 = new Chart($ctx6, {
                         ctx.fillStyle = 'white';
                         var y_pos = model.y + 25;
                        // var procent  = this.data.datasets[2];
-						debugger;
+						//debugger;
                         if ((scale_max - model.y) / scale_max >= 0.93)
                             y_pos = model.y + 25; 
 						if (dataset.label=="%")	{

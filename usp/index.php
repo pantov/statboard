@@ -337,7 +337,7 @@ if (isset($_GET['update'])) {
        <div class="col-lg-4"><!-- Chart2-->
 	   <p></p>
 			<div  class="card border bg-dark text-white  rounded" >
-			<div  class="card-header text-center"> <h4>Среднемесячная з/плата, руб. <br> и темп её роста, % </h4></div>
+			<div  class="card-header text-center"> <h4>Среднемесячная зарплата, руб. <br> и темп её роста, % </h4></div>
      	     <div class="container">
               <canvas id="Chart2" width="200" height="100"></canvas>
 	          <p></p>
@@ -348,7 +348,7 @@ if (isset($_GET['update'])) {
 	   <div class="col-lg-4"><!--Chart3 -->
 	   <p></p>
 			<div  class="card border bg-dark text-white  rounded" >
-			<div  class="card-header text-center"> <h4>Структура з/платы, % <br> <span style="color:#548235">■</span> - Оклад. <span style="color:#bf9000">■</span> - Комп. <span style="color:#fe5f35">■</span> - Стим. <span style="color:#952101">■</span> - Проч.</h4></div>
+			<div  class="card-header text-center"> <h4>Структура зарплаты, % <br> <span style="color:#548235">■</span> - Оклад. <span style="color:#bf9000">■</span> - Комп. <span style="color:#fe5f35">■</span> - Стим. <span style="color:#952101">■</span> - Проч.</h4></div>
      	     <div class="container">
               <canvas id="Chart3" width="200" height="100"></canvas>
 	          <p></p>
@@ -373,7 +373,7 @@ if (isset($_GET['update'])) {
         <div class="col-lg-4"><!-- Chart5 -->
 		<p></p>
 			<div  class="card border bg-dark text-white  rounded" >
-			<div  class="card-header text-center"> <h4>Работники по уровню зарплаты, сорт./тыс.руб.<br> <span style="color:yellow">■</span> - Медианная з/плата, руб.</h4></div>
+			<div  class="card-header text-center"> <h4>Работники по уровню зарплаты, сорт./тыс.руб.<br> <span style="color:yellow">■</span> - Медианная зарплата, руб.</h4></div>
      	     <div class="container">
               <canvas id="Chart5" width="200" height="100"></canvas>
 	          <p></p>

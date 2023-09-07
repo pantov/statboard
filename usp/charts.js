@@ -33,6 +33,7 @@ Chart1 = new Chart($ctx1, {
                 ctx.textAlign = 'center';
                 ctx.textBaseline = 'bottom';
               ctx.font = 'bold 20px "Helvetica Neue", "Helvetica", "Arial", sans-serif';
+              
               this.data.datasets.forEach(function (dataset) {
                     for (var i = 0; i < dataset.data.length; i++) {
                         var model = dataset._meta[Object.keys(dataset._meta)[0]].data[i]._model,
@@ -45,13 +46,16 @@ Chart1 = new Chart($ctx1, {
                             y_pos = model.y + 25; 
 						if (dataset.label=="1")
                         if (dataset.data[i]>0) 	
-                        ctx.fillText(numberWithSpaces(dataset.data[i]), model.x, y_pos);
+                        //ctx.fillText(numberWithSpaces(dataset.data[i]), model.x, y_pos);
+                        ctx.fillText(numberWithSpaces(Chart1.data.datasets[1].data[i])+" %", model.x, y_pos);
 						if (dataset.label=="2")	{
-							y_pos = scale_max - 30;
-                            if (dataset.data[i]>0) 
-							ctx.fillText(numberWithSpaces(dataset.data[i])+" %", model.x, y_pos);
-						}
-                        	
+                           y_pos = scale_max - 10;
+                            if (dataset.data[i]>0) {
+							//ctx.fillText(numberWithSpaces(dataset.data[i])+" %", model.x, y_pos);
+                            ctx.fillText(numberWithSpaces(Chart1.data.datasets[0].data[i]), model.x, y_pos);
+                            }
+                        }
+                        		                
                        // ctx.fillText(dataset.data[i], model.x, y_pos);
                     }
                 });   
@@ -157,14 +161,16 @@ Chart2 = new Chart($ctx2, {
                             y_pos = model.y + 25; 
 						if (dataset.label=="1")
                         if (dataset.data[i]>0) 	
-                        ctx.fillText(numberWithSpaces(dataset.data[i]), model.x, y_pos);
+                        //ctx.fillText(numberWithSpaces(dataset.data[i]), model.x, y_pos);
+                        ctx.fillText(numberWithSpaces(Chart2.data.datasets[1].data[i])+" %", model.x, y_pos);
 
 						if (dataset.label=="2")	{
-							y_pos = scale_max - 30;
+							y_pos = scale_max - 10;
 							//y_pos =  1;
 							//debugger;
                             if (dataset.data[i]>0)   
-							ctx.fillText(dataset.data[i]+" %", model.x, y_pos);
+							//ctx.fillText(dataset.data[i]+" %", model.x, y_pos);
+                            ctx.fillText(numberWithSpaces(Chart2.data.datasets[0].data[i]), model.x, y_pos);
 						}
                         	
                        // ctx.fillText(dataset.data[i], model.x, y_pos);

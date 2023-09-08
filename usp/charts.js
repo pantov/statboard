@@ -327,18 +327,16 @@ Chart3 = new Chart($ctx3, {
                             y_pos = model.y + 20;  
                             //x_pos = model.x +65;
                             }
+                            if (dataset.data[i]<10){
+                               // y_pos = model.y + 20;  
+                                x_pos = model.x +65;
+                                }
                         if (model.label=='2023') {	
-                      //  console.log(dataset._meta[Object.keys(dataset._meta)[0]].data[i]._model);
-                        console.log(model.datasetLabel+" y_pos "+ y_pos);
+                       //  console.log(dataset._meta[Object.keys(dataset._meta)[0]].data[i]._model);
+                       // console.log(model.datasetLabel+" y_pos "+ y_pos);
                           }
                          ctx.fillText(dataset.data[i]+" %", x_pos, y_pos);
-                          //  if (dataset.data[i]>10)
-                           // ctx.fillText(dataset.data[i]+" %", model.x, y_pos);
-                         //  ctx.fillText(dataset.data[i]+" %", model.x, model.base);
-                         //  ctx.fillText(dataset.data[i]+" %", model.x, (model.base-model.y)/2);
-                           //  else
-                          //  ctx.fillText(dataset.data[i]+" %", model.x+65, y_pos);
-                        }
+                         }
                         
                     }
                 });               

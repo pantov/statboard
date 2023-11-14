@@ -232,7 +232,7 @@ if (isset($_GET['update'])) {
 	   
 			<p></p>
 			<div class="card border bg-dark text-white  rounded" >
-			<div  class="card-header text-center"> <h4> Численность, ставк. </h4> </div>
+			<div  class="card-header text-center"> <h4> Численность, ставок. </h4> </div>
 			 
 				<table text-align="center" style="width:100%">
 				  <tr>
@@ -250,7 +250,7 @@ if (isset($_GET['update'])) {
        <div class="col-lg-6"><!-- b -->
 			<p></p>
 			<div class="card border bg-dark text-white  rounded" >
-			<div  class="card-header text-center"> <h4> Факт по категориям должностей, сотр. </h4> </div>
+			<div  class="card-header text-center"> <h4> Факт по категориям должностей, ставок. </h4> </div>
 				<table text-align="center" style="width:100%">
 				  <tr>
 					<td><center><h5>АУП</h5></center></td>

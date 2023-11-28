@@ -254,7 +254,7 @@ if (isset($_GET['update'])) {
 				<table text-align="center" style="width:100%">
 				  <tr>
 					<td><center><h5>АУП</h5></center></td>
-					<td><center><h5>Отраслевое специалисты</h5></center></td>
+					<td><center><h5>Отраслевые специалисты</h5></center></td>
 					<td><center><h5>Прочие</h5></center></td>
 				  </tr>
 				  <tr>
@@ -373,7 +373,7 @@ if (isset($_GET['update'])) {
         <div class="col-lg-4"><!-- Chart5 -->
 		<p></p>
 			<div  class="card border bg-dark text-white  rounded" >
-			<div  class="card-header text-center"> <h4>Работники по уровню зарплаты, сорт./тыс.руб.<br> <span style="color:yellow">■</span> - Медианная зарплата, руб.</h4></div>
+			<div  class="card-header text-center"> <h4>Работники по уровню зарплаты, тыс.руб.<br> <span style="color:yellow">■</span> - Медианная зарплата, руб.</h4></div>
      	     <div class="container">
               <canvas id="Chart5" width="200" height="100"></canvas>
 	          <p></p>
@@ -385,7 +385,7 @@ if (isset($_GET['update'])) {
 		<div class="col-lg-4"><!-- Chart6 -->
 		<p></p>
 			<div  class="card border bg-dark text-white  rounded" >
-			<div  class="card-header text-center"> <h4>Работников всего и получавших МРОТ, сотр. <br> <span style="color:#bf9000">■</span> - доля МРОТ, % </h4></div>
+			<div  class="card-header text-center"> <h4>Работников всего и получавших МРОТ <br> <span style="color:#bf9000">■</span> - доля МРОТ, % </h4></div>
      	     <div class="container">
               <canvas id="Chart6" width="200" height="100"></canvas>
 	          <p></p>

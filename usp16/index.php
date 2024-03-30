@@ -187,25 +187,7 @@ if (isset($_GET['update'])) {
     </div>
 	
 	
- <div class="dropdown">
- 
-    <button id="Btn1" type="button" class="btn-sm btn-secondary dropdown-toggle" data-toggle="dropdown" >
-    <h5 id="select_date" class="text-white">На дату: 01-01-2024</h5>
-    </button> 
-<div class="dropdown-menu">
-	<?
-	    $dats = substr($obj->pck[0]->date,1);
-		$arr_date = explode(";",$dats);
-		$menu_date='';
-		$d=0;
-		foreach ($arr_date as $dates) {
-			$menu_date=$menu_date.'<a class="dropdown-item" href="#" onclick="Select_date('.$d.',\''.$dates.'\')" >'.$dates.'</a>';
-			$d=$d+1;
-		}			
-		echo $menu_date;	
-		  ?> 
-     </div>	
-</div> 
+
 	
 	
 	
@@ -244,7 +226,43 @@ if (isset($_GET['update'])) {
 					<td><center><p>Все работники <br> (за исключением АУП)</p></center></td>
 				  </tr>
 				  <tr>
-					<td colspan="2" align="center"><h5> <?echo $kvartal?> <?echo $gods-1?> год</h5></td>
+					<td colspan="2" align="center">
+					
+					
+ <div class="dropdown dropup">
+ 
+    <button id="Btn1" type="button" class="btn-sm btn-secondary dropdown-toggle" data-toggle="dropdown" >
+    <h5 id="select_date" class="text-white">На дату: 01-01-2024</h5>
+    </button> 
+<div class="dropdown-menu">
+	<?
+	    $dats = substr($obj->pck[0]->date,1);
+		$arr_date = explode(";",$dats);
+		$menu_date='';
+		$d=0;
+		foreach ($arr_date as $dates) {
+        $gods1=substr($dates,0,4);
+        $k = substr($dates,5,2);
+        if ($k=='01') $kv='на 1 квартал'; if ($k=='04') $kv='на 1 полугодие'; if ($k=='07') $kv='на 9 месяцев'; if ($k=='10') $kv='за';
+			if ($d==0) $dats0=$kv.' '.$gods1.' г';
+			$menu_date=$menu_date.'<a class="dropdown-item" href="#" onclick="Select_date('.$d.',\''.$kv.' '.$gods1.' г'.'\')" >'.$kv.' '.$gods1.' г'.'</a>';
+			$d=$d+1;
+		}			
+		echo $menu_date;	
+		  ?> 
+     </div>	
+</div> 						
+					
+					
+					
+					
+					
+					</td>
+					
+					
+				
+					
+					
 				  </tr>				  
 				  <tr>
 					<td><center><h3 id="i1"> <animated-integer :value="i1"></animated-integer> </h3></center></td>
@@ -504,7 +522,7 @@ const vm = app.mount('#container2')
 	
 	 <? echo $menu100 ?>
      
-     document.getElementById('select_date').innerHTML = 'На дату: <? echo substr($dats,0,10); ?>';
+     document.getElementById('select_date').innerHTML = '<? echo substr($dats0,0,10); ?>';
 
 	  var maxHeight = 0;
 
@@ -538,7 +556,7 @@ const vm = app.mount('#container2')
 	{
 	
 	
-	document.getElementById('select_date').innerHTML = 'На дату: '+name;
+	document.getElementById('select_date').innerHTML = name;
     Gdate=d+1;
 	Ggods=name.substring(0,4);
 //	document.getElementById('gods').innerHTML = Ggods+' год';

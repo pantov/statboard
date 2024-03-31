@@ -206,7 +206,36 @@ if (isset($_GET['update'])) {
        <div class="col-lg-12"><!-- i0 -->
 	   		<p></p>
 			<div id="card_i1" class="card border bg-dark text-white  rounded" >
-			<div  class="card-header text-center"> <h4> АНАЛИТИКА<br>численности и заработной платы<br>по итогам <?echo $kvartal2?> <?echo $gods?> года  <br>с аналогичными данными за предыдущие года</h4> </div>
+			<div  class="card-header text-center"> <h4> АНАЛИТИКА<br>численности и заработной платы<br>
+			
+<p></p>			
+<div class="dropdown dropup">
+ 
+    <button id="Btn1" type="button" class="btn-sm btn-secondary dropdown-toggle" data-toggle="dropdown" >
+    <h5 id="select_date" class="text-white">На дату: 01-01-2024</h5>
+    </button> 
+<div class="dropdown-menu">
+	<?
+	    $dats = substr($obj->pck[0]->date,1);
+		$arr_date = explode(";",$dats);
+		$menu_date='';
+		$d=0;
+		foreach ($arr_date as $dates) {
+        $gods1=substr($dates,0,4);
+        $k = substr($dates,5,2);
+        if ($k=='01') $kv='на 1 квартал'; if ($k=='04') $kv='на 1 полугодие'; if ($k=='07') $kv='на 9 месяцев'; if ($k=='10') $kv='за';
+			if ($d==0) $dats0=$kv.' '.$gods1.' г.';
+			$menu_date=$menu_date.'<a class="dropdown-item" href="#" onclick="Select_date('.$d.',\''.$kv.' '.$gods1.' г.'.'\')" >'.$kv.' '.$gods1.' г.'.'</a>';
+			$d=$d+1;
+		}			
+		echo $menu_date;	
+		  ?> 
+     </div>	
+</div> 				
+			
+			
+			
+			<br>с аналогичными данными за предыдущие года</h4> </div>
 			 
 			</div>	
 			<p></p>	  
@@ -229,47 +258,22 @@ if (isset($_GET['update'])) {
 					<td colspan="2" align="center">
 					
 					
- <div class="dropdown dropup">
- 
-    <button id="Btn1" type="button" class="btn-sm btn-secondary dropdown-toggle" data-toggle="dropdown" >
-    <h5 id="select_date" class="text-white">На дату: 01-01-2024</h5>
-    </button> 
-<div class="dropdown-menu">
-	<?
-	    $dats = substr($obj->pck[0]->date,1);
-		$arr_date = explode(";",$dats);
-		$menu_date='';
-		$d=0;
-		foreach ($arr_date as $dates) {
-        $gods1=substr($dates,0,4);
-        $k = substr($dates,5,2);
-        if ($k=='01') $kv='на 1 квартал'; if ($k=='04') $kv='на 1 полугодие'; if ($k=='07') $kv='на 9 месяцев'; if ($k=='10') $kv='за';
-			if ($d==0) $dats0=$kv.' '.$gods1.' г';
-			$menu_date=$menu_date.'<a class="dropdown-item" href="#" onclick="Select_date('.$d.',\''.$kv.' '.$gods1.' г'.'\')" >'.$kv.' '.$gods1.' г'.'</a>';
-			$d=$d+1;
-		}			
-		echo $menu_date;	
-		  ?> 
-     </div>	
-</div> 						
+			
 					
-					
+                  <h5 id="God01">предыдущий период</h5>					
 					
 					
 					
 					</td>
-					
-					
-				
-					
-					
 				  </tr>				  
 				  <tr>
 					<td><center><h3 id="i1"> <animated-integer :value="i1"></animated-integer> </h3></center></td>
 					<td><center><h3 id="i2"> <animated-integer :value="i2"></animated-integer> </h3></center></td>
 				  </tr>
 				  <tr>
-					<td colspan="2" align="center"><h5><?echo $kvartal?> <?echo $gods?> год</h5></td>
+					<td colspan="2" align="center">
+					<h5 id="God02"><?echo $kvartal?> <?echo $gods?> год</h5>
+					</td>
 				  </tr>				  
 				  <tr>
 					<td><center><h3 id="i3"> <animated-integer :value="i3"></animated-integer> </h3></center></td>
@@ -523,6 +527,7 @@ const vm = app.mount('#container2')
 	 <? echo $menu100 ?>
      
      document.getElementById('select_date').innerHTML = '<? echo substr($dats0,0,10); ?>';
+     document.getElementById('God02').innerHTML = '<? echo substr($dats0,0,10); ?>';
 
 	  var maxHeight = 0;
 
@@ -560,11 +565,13 @@ const vm = app.mount('#container2')
     Gdate=d+1;
 	Ggods=name.substring(0,4);
 //	document.getElementById('gods').innerHTML = Ggods+' год';
+    document.getElementById('God02').innerHTML = name;
     Paint0();
 	}
 
     function Paint0(){
 	//document.getElementById('gods').innerHTML = Ggods+' год';
+	
 	document.getElementById('a1').innerHTML = numberWithSpaces(Ga1.split(';')[Gdate]);
 	document.getElementById('a2').innerHTML = numberWithSpaces(Ga2.split(';')[Gdate]);
 	document.getElementById('b1').innerHTML = numberWithSpaces(Gb1.split(';')[Gdate]);

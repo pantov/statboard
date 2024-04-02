@@ -230,12 +230,13 @@ if (isset($_GET['update'])) {
 		}			
 		echo $menu_date;	
 		  ?> 
+		  
      </div>	
 </div> 				
 			
 			
 			
-			<br>с аналогичными данными за предыдущие года</h4> </div>
+			<br>с аналогичными данными за предыдущие года  </h4> </div>
 			 
 			</div>	
 			<p></p>	  
@@ -272,7 +273,7 @@ if (isset($_GET['update'])) {
 				  </tr>
 				  <tr>
 					<td colspan="2" align="center">
-					<h5 id="God02"><?echo $kvartal?> <?echo $gods?> год</h5>
+					<h5 id="God02"><?echo $dats0?></h5>
 					</td>
 				  </tr>				  
 				  <tr>
@@ -526,8 +527,8 @@ const vm = app.mount('#container2')
 	
 	 <? echo $menu100 ?>
      
-     document.getElementById('select_date').innerHTML = '<? echo substr($dats0,0,10); ?>';
-     document.getElementById('God02').innerHTML = '<? echo substr($dats0,0,10); ?>';
+     document.getElementById('select_date').innerHTML = '<?echo $dats0?>';
+     document.getElementById('God02').innerHTML = '<?echo $dats0?>';
 
 	  var maxHeight = 0;
 

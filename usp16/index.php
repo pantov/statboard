@@ -82,9 +82,9 @@ if (isset($_GET['update'])) {
 </head>
 <body>
 	<script type="text/javascript">
-    var Gdate=1;Ggods=2024;
-	var Ga1;Ga2;Gb1;Gb1;Gb2;Gb3;Gi1;Gi2;Gi11;Gi12;Gc1;Gc2;Gd1;Ge1;Ge2;Gf1;Gf2;Gf11;Gf12;Gf21;Gf22;Gg1;Gg2;Gg11;Gg12;Gg21;Gg22;Gh1;Gh2;Gh3;Gh4;Gh5;Gh11;Gh12;Gh13;Gh14;Gh15;Gh21;Gh22;Gh23;Gh24;Gh25;Gj1;Gj2;Gj3;Gj11;Gj12;Gj13;Gj21;Gj22;Gj23;Gk0;Gk1;Gk2;Gk3;Gk4;Gk5;Gk6;Gk7;Gk8;Gk9;Gk10;Gl1;Gl2;Gl3;Gl11;Gl12;Gl13;Gl21;Gl22;Gl23;Gtmp0
-	</script>
+  var Gdate=1;Ggods=2024;
+	var Ga1;Ga2;Gb1;Gb1;Gb2;Gb3;Gi1;Gi2;Gi11;Gi12;Gc1;Gc2;Gd1;Ge1;Ge2;Gf1;Gf2;Gf11;Gf12;Gf21;Gf22;Gg1;Gg2;Gg11;Gg12;Gg21;Gg22;Gh1;Gh2;Gh3;Gh4;Gh5;Gh11;Gh12;Gh13;Gh14;Gh15;Gh21;Gh22;Gh23;Gh24;Gh25;Gj1;Gj2;Gj3;Gj11;Gj12;Gj13;Gj21;Gj22;Gj23;Gk0;Gk1;Gk2;Gk3;Gk4;Gk5;Gk6;Gk7;Gk8;Gk9;Gk10;Gl1;Gl2;Gl3;Gl11;Gl12;Gl13;Gl21;Gl22;Gl23;Gtmp0;
+	  </script>
 	
 <div class="container-fluid bg-light" id="container2">
 <div id="container1" class="container-fluid bg-white" style="padding-top: 1px">
@@ -216,7 +216,7 @@ if (isset($_GET['update'])) {
     </button> 
 <div class="dropdown-menu">
 	<?
-	    $dats = substr($obj->pck[0]->date,1);
+	  $dats = substr($obj->pck[0]->date,1);
 		$arr_date = explode(";",$dats);
 		$menu_date='';
 		$d=0;
@@ -225,7 +225,7 @@ if (isset($_GET['update'])) {
         $k = substr($dates,5,2);
         if ($k=='01') $kv='на 1 квартал'; if ($k=='04') $kv='на 1 полугодие'; if ($k=='07') $kv='на 9 месяцев'; if ($k=='10') $kv='за';
 			if ($d==0) $dats0=$kv.' '.$gods1.' г.';
-			$menu_date=$menu_date.'<a class="dropdown-item" href="#" onclick="Select_date('.$d.',\''.$kv.' '.$gods1.' г.'.'\')" >'.$kv.' '.$gods1.' г.'.'</a>';
+			$menu_date=$menu_date.'<a class="dropdown-item" href="#" onclick="Select_date('.$d.',\''.$kv.' '.$gods1.' г.'.'\','.$gods1.')" >'.$kv.' '.$gods1.' г.'.'</a>';
 			$d=$d+1;
 		}			
 		echo $menu_date;	
@@ -558,15 +558,23 @@ const vm = app.mount('#container2')
 
 
 	<script>
-	function Select_date(d,name)
+	function Select_date(d,name,g)
 	{
 	
-	
+  Ggods=g;
+  Chart1.data.labels = [Ggods-2, Ggods-1, Ggods];
+  Chart2.data.labels = [Ggods-2, Ggods-1, Ggods];
+  Chart3.data.labels = [Ggods-2, Ggods-1, Ggods];
+  Chart4.data.labels = [Ggods-2, Ggods-1, Ggods];
+  Chart5.data.labels = [Ggods-2, Ggods-1, Ggods];
+  Chart6.data.labels = [Ggods-2, Ggods-1, Ggods];
+  debugger;
 	document.getElementById('select_date').innerHTML = name;
-    Gdate=d+1;
+  Gdate=d+1;
 	Ggods=name.substring(0,4);
 //	document.getElementById('gods').innerHTML = Ggods+' год';
     document.getElementById('God02').innerHTML = name;
+    
     Paint0();
 	}
 

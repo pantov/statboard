@@ -1,9 +1,12 @@
 //
+
 const $ctx1 = document.querySelector("#Chart1");
 Chart1 = new Chart($ctx1, {
   type: "bar",
   data: {
-    labels: ["2021", "2022", "2023"],
+ //   labels: [god1, god2, god3],
+ labels: [Ggods-2, Ggods-1, Ggods],
+ 
     datasets: [
       {
         label: "1",

@@ -186,17 +186,8 @@ if (isset($_GET['update'])) {
      </div>		  
     </div>
 	
-	
-
-	
-	
-	
-	
-	
   </div>			
 		
-
-
 <div class="card-body text-center"><h4 id="name1"></h4></div>
 			<p></p>						
 			</div>	

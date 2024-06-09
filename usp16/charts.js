@@ -144,7 +144,7 @@ const $ctx2 = document.querySelector("#Chart2");
 Chart2 = new Chart($ctx2, {
   type: "bar",
   data: {
-    labels: ["2021", "2022", "2023"],
+    labels: [Ggods-2, Ggods-1, Ggods],
     datasets: [
       {
         label: "1",
@@ -292,7 +292,7 @@ const $ctx3 = document.querySelector("#Chart3");
 Chart3 = new Chart($ctx3, {
   type: "bar",
   data: {
-    labels: ["2021", "2022", "2023"],
+    labels: [Ggods-2, Ggods-1, Ggods],
     datasets: [
       // {
       //         label: '1',
@@ -471,7 +471,7 @@ const $ctx4 = document.querySelector("#Chart4");
 Chart4 = new Chart($ctx4, {
   type: "bar",
   data: {
-    labels: ["2021", "2022", "2023"],
+    labels: [Ggods-2, Ggods-1, Ggods],
     datasets: [
       // {
       //     label: ' ',
@@ -793,7 +793,7 @@ const $ctx6 = document.querySelector("#Chart6");
 Chart6 = new Chart($ctx6, {
   type: "bar",
   data: {
-    labels: ["2021", "2022", "2023"],
+    labels: [Ggods-2, Ggods-1, Ggods],
     datasets: [
       // {
       //     label: ' ',

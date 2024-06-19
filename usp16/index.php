@@ -147,6 +147,7 @@ if (isset($_GET['update'])) {
 		  
           foreach($obj->children() as $pck ) {
 	      $name=str_replace('"', '', $obj->pck[$i]->y);
+	      $name=str_replace(',', ' ', $name);
 		  $menu01=$name.','
 		  .$obj->pck[$i]->a1.','.$obj->pck[$i]->a2.','		  
 		  .$obj->pck[$i]->b1.','.$obj->pck[$i]->b2.','.$obj->pck[$i]->b3.','		  

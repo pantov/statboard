@@ -593,14 +593,14 @@ const vm = app.mount('#container2')
 	PaintChart3(Gh1.split(';')[Gdate],Gh2.split(';')[Gdate],Gh3.split(';')[Gdate],Gh4.split(';')[Gdate],Gh5.split(';')[Gdate],Gh11.split(';')[Gdate],Gh12.split(';')[Gdate],Gh13.split(';')[Gdate],Gh14.split(';')[Gdate],Gh15.split(';')[Gdate],Gh21.split(';')[Gdate],Gh22.split(';')[Gdate],Gh23.split(';')[Gdate],Gh24.split(';')[Gdate],Gh25.split(';')[Gdate]);
 	PaintChart4(Gj1.split(';')[Gdate],Gj2.split(';')[Gdate],Gj3.split(';')[Gdate],Gj11.split(';')[Gdate],Gj12.split(';')[Gdate],Gj13.split(';')[Gdate],Gj21.split(';')[Gdate],Gj22.split(';')[Gdate],Gj23.split(';')[Gdate]);
 	PaintChart5(Gk0.split(';')[Gdate],Gk1.split(';')[Gdate],Gk2.split(';')[Gdate],Gk3.split(';')[Gdate],Gk4.split(';')[Gdate],Gk5.split(';')[Gdate],Gk6.split(';')[Gdate],Gk7.split(';')[Gdate],Gk8.split(';')[Gdate],Gk9.split(';')[Gdate],Gk10.split(';')[Gdate]);
-	PaintChart6(Gl1.split(';')[Gdate],Gl2.split(';')[Gdate],Gl3.split(';')[Gdate],Gl11.split(';')[Gdate],Gl12.split(';')[Gdate],Gl13.split(';')[Gdate],Gl21.split(';')[Gdate],Gl21.split(';')[Gdate],Gl22.split(';')[Gdate],Gl23.split(';')[Gdate]);	
+	PaintChart6(Gl1.split(';')[Gdate],Gl2.split(';')[Gdate],Gl3.split(';')[Gdate],Gl11.split(';')[Gdate],Gl12.split(';')[Gdate],Gl13.split(';')[Gdate],Gl21.split(';')[Gdate],Gl22.split(';')[Gdate],Gl23.split(';')[Gdate]);	
 //debugger;	
 	}
 
 	
-    function Paint1(name,a1,a2,b1,b2,b3,i1,i2,i11,i12,c1,c2,d1,e1,e2,f1,f2,f11,f12,f21,f22,g1,g2,g11,g12,g21,g22,h1,h2,h3,h4,h5,h11,h12,h13,h14,h15,h21,h22,h23,h24,h25,j1,j2,j3,j11,j12,j13,j21,j22,j23,k0,k1,k2,k3,k4,k5,k6,k7,k8,k9,k10,l1,l2,l3,l11,l12,l13,l21,l22,l23,tmp0)
+  function Paint1(name,a1,a2,b1,b2,b3,i1,i2,i11,i12,c1,c2,d1,e1,e2,f1,f2,f11,f12,f21,f22,g1,g2,g11,g12,g21,g22,h1,h2,h3,h4,h5,h11,h12,h13,h14,h15,h21,h22,h23,h24,h25,j1,j2,j3,j11,j12,j13,j21,j22,j23,k0,k1,k2,k3,k4,k5,k6,k7,k8,k9,k10,l1,l2,l3,l11,l12,l13,l21,l22,l23,tmp0)
 	{
-    Ga1=a1;Ga2=a2;Gb1=b1;Gb2=b2;Gb3=b3;Gi1=i1;Gi2=i2;Gi11=i11;Gi12=i12;Gc1=c1;Gc2=c2;Gd1=d1;Ge1=e1;Ge2=e2;Gf1=f1;Gf2=f2;Gf11=f11;Gf12=f12;Gf21=f21;
+  Ga1=a1;Ga2=a2;Gb1=b1;Gb2=b2;Gb3=b3;Gi1=i1;Gi2=i2;Gi11=i11;Gi12=i12;Gc1=c1;Gc2=c2;Gd1=d1;Ge1=e1;Ge2=e2;Gf1=f1;Gf2=f2;Gf11=f11;Gf12=f12;Gf21=f21;
 	Gf22=f22;Gg1=g1;Gg2=g2;Gg11=g11;Gg12=g12;Gg21=g21;Gg22=g22;Gh1=h1;Gh2=h2;Gh3=h3;Gh4=h4;Gh5=h5;Gh11=h11;Gh12=h12;Gh13=h13;Gh14=h14;Gh15=h15;Gh21=h21;
 	Gh22=h22;Gh23=h23;Gh24=h24;Gh25=h25;Gj1=j1;Gj2=j2;Gj3=j3;Gj11=j11;Gj12=j12;Gj13=j13;Gj21=j21;Gj22=j22;Gj23=j23;
 	Gk0=k0;Gk1=k1;Gk2=k2;Gk3=k3;Gk4=k4;Gk5=k5;Gk6=k6;Gk7=k7;Gk8=k8;Gk9=k9;Gk10=k10;Gl1=l1;Gl2=l2;Gl3=l3;Gl11=l11;Gl12=l12;Gl13=l13;Gl21=l21;Gl22=l22;Gl23=l23; 
@@ -631,6 +631,7 @@ const vm = app.mount('#container2')
 <script type="text/javascript">
 
 function PaintChart1(f1,f2,f11,f12,f21,f22) {
+   debugger;
    Chart1.data.datasets[0].data = [f21,f11,f1];
    Chart1.data.datasets[1].data = [f22,f12,f2];
    Chart1.update();

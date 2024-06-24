@@ -54,16 +54,17 @@ Chart1 = new Chart($ctx1, {
             ctx.fillStyle = "white";
             //ctx.font = 'bold 12px "Helvetica Neue", "Helvetica", "Arial", sans-serif';
             //debugger;
+            if (dataset.data[i] > 0) {
             var y_pos = model.y + 25;
             if ((scale_max - model.y) / scale_max >= 0.93) y_pos = model.y + 25;
-            if (dataset.label == "1")
-              if (dataset.data[i] > 0)
+            if (dataset.label == "1") {
+              if (dataset.data[i] > 0) {
                 //ctx.fillText(numberWithSpaces(dataset.data[i]), model.x, y_pos);
                 ctx.fillText(
                   numberWithSpaces(Chart1.data.datasets[1].data[i]) + " %",
                   model.x,
                   y_pos
-                );
+                ); } }
             if (dataset.label == "2") {
               y_pos = scale_max - 10;
               if (dataset.data[i] > 0) {
@@ -77,6 +78,7 @@ Chart1 = new Chart($ctx1, {
             }
 
             // ctx.fillText(dataset.data[i], model.x, y_pos);
+          }
           }
         });
         //debugger;

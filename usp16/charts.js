@@ -62,15 +62,17 @@ Chart1 = new Chart($ctx1, {
                 //ctx.fillText(numberWithSpaces(dataset.data[i]), model.x, y_pos);
                 ctx.fillText(
                   numberWithSpaces(Chart1.data.datasets[1].data[i]) + " %",
+                  
                   model.x,
                   y_pos
                 ); } }
             if (dataset.label == "2") {
               y_pos = scale_max - 10;
-              if (dataset.data[i] > 0) {
+              if (Chart1.data.datasets[0].data[i] > 0) {
                 //ctx.fillText(numberWithSpaces(dataset.data[i])+" %", model.x, y_pos);
                 ctx.fillText(
                   numberWithSpaces(Chart1.data.datasets[0].data[i]),
+                 
                   model.x,
                   y_pos
                 );
@@ -208,7 +210,7 @@ Chart2 = new Chart($ctx2, {
               y_pos = scale_max - 10;
               //y_pos =  1;
               //debugger;
-              if (dataset.data[i] > 0)
+              if (Chart2.data.datasets[0].data[i] > 0)
                 //ctx.fillText(dataset.data[i]+" %", model.x, y_pos);
                 ctx.fillText(
                   numberWithSpaces(Chart2.data.datasets[0].data[i]),
@@ -536,7 +538,7 @@ Chart4 = new Chart($ctx4, {
             //if (dataset.label=="%")
             //ctx.fillText(dataset.data[i]+" %", model.x, y_pos);
             //if (dataset.label=="_")
-            // if (dataset.data[i]>0)
+            if (dataset.data[i]>0)
             ctx.fillText(dataset.data[i] + " %", model.x, y_pos);
           }
         });
@@ -870,10 +872,12 @@ Chart6 = new Chart($ctx6, {
             if (dataset.label == "2") {
               // if (dataset.data[i]>0)
               y_pos = model.y - 10;
+              if (dataset.data[i]>0)
               ctx.fillText(dataset.data[i], model.x, y_pos);
             }
             if (dataset.label == "3") {
               y_pos = scale_max - 3;
+              if (dataset.data[i] > 0 )
               ctx.fillText(dataset.data[i] + " %", model.x + 65, y_pos);
             }
           }

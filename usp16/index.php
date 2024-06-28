@@ -560,7 +560,7 @@ const vm = app.mount('#container2')
   Chart4.data.labels = [Ggods-2, Ggods-1, Ggods];
   Chart5.data.labels = [Ggods-2, Ggods-1, Ggods];
   Chart6.data.labels = [Ggods-2, Ggods-1, Ggods];
-  debugger;
+  //debugger;
 	document.getElementById('select_date').innerHTML = name;
   Gdate=d+1;
 	Ggods=name.substring(0,4);
@@ -631,10 +631,10 @@ const vm = app.mount('#container2')
 <script type="text/javascript">
 
 function PaintChart1(f1,f2,f11,f12,f21,f22) {
-   debugger;
-   Chart1.data.datasets[0].data = [f21,f11,f1];
+      Chart1.data.datasets[0].data = [f21,f11,f1];
    Chart1.data.datasets[1].data = [f22,f12,f2];
    Chart1.update();
+  // debugger;
 };
 function PaintChart2(g1,g2,g11,g12,g21,g22) {
    Chart2.data.datasets[0].data = [g21,g11,g1];

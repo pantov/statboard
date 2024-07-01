@@ -327,7 +327,7 @@ if (isset($_GET['update'])) {
        <div class="col-lg-4"><!-- c -->
 			<p></p>
 			<div class="card border bg-dark text-white  rounded" >
-			<div  class="card-header text-center"> <h4 id="tec"> Текучесть за <?echo $kvartal?> <?echo $gods?> г. чел.</h4></div>
+			<div  class="card-header text-center"> <h4 id="tec"> Текучесть <?echo $dats0?>  чел.</h4></div>
 				<table text-align="center" style="width:100%">
 				  <tr>
 					<td><center><h5>Назначено</h5></center></td>
@@ -560,11 +560,13 @@ const vm = app.mount('#container2')
   Chart4.data.labels = [Ggods-2, Ggods-1, Ggods];
   Chart5.data.labels = [Ggods-2, Ggods-1, Ggods];
   Chart6.data.labels = [Ggods-2, Ggods-1, Ggods];
-  //debugger;
+  debugger;
 	document.getElementById('select_date').innerHTML = name;
   Gdate=d+1;
 	Ggods=name.substring(0,4);
-//	document.getElementById('gods').innerHTML = Ggods+' год';
+	
+  document.getElementById('tec').innerHTML =  "Текучесть "+name+" чел.";
+
     document.getElementById('God02').innerHTML = name;
     
     Paint0();

@@ -815,7 +815,7 @@ function PaintChart6(l1,l2,l3,l11,l12,l13,l21,l22,l23) {
  <footer>
       <div class="container-fluid">
         <div class="row">
-		   <div class="col-lg-12"> <center><h6 data-toggle="tooltip" title=<? echo $xml_update_time ?>>&copy; 2023</h6></center> </div>
+		   <div class="col-lg-12"> <center><h6 data-toggle="tooltip" title=<? echo $xml_update_time ?>>&copy; 2024</h6></center> </div>
         </div>
       </div>
  </footer>

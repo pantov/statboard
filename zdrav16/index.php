@@ -11,7 +11,7 @@
 	$xml_update_time = date("d.m.Y-H:i:s", filectime($filename));
   }  
 if (isset($_GET['update'])) {
-  $xml="http://i48s-d-db1/ina/st/hs/sttst/data/5";
+  $xml="http://i48s-d-db1/ina/st/hs/sttst/data/6";
   $objxml = get_data($xml);
   if ($objxml) {$objxml->saveXML("data.xml");}
 };

@@ -79,7 +79,12 @@ if (isset($_GET['update'])) {
    }
    .scrollable-menu {
     height: auto;
-    max-height: 600px;
+    max-height: 400px;
+    overflow-x: hidden;
+}
+.scrollable-menu2 {
+    height: auto;
+    max-height: 120px;
     overflow-x: hidden;
 }
   
@@ -206,12 +211,12 @@ if (isset($_GET['update'])) {
 			<div  class="card-header text-center"> <h4> АНАЛИТИКА<br>численности и заработной платы<br>
 			
 <p></p>			
-<div class="dropdown dropup">
+<div class="dropdown dropup ">
  
     <button id="Btn1" type="button" class="btn-sm btn-secondary dropdown-toggle" data-toggle="dropdown" >
     <h5 id="select_date" class="text-white">На дату: 01-01-2024</h5>
     </button> 
-<div class="dropdown-menu">
+<div class="dropdown-menu scrollable-menu2">
 	<?
 	  $dats = substr($obj->pck[0]->date,1);
 		$arr_date = explode(";",$dats);

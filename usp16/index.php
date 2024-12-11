@@ -77,7 +77,16 @@ if (isset($_GET['update'])) {
    .color3 {
     color: #bf9000; 
    }
-  
+   .scrollable-menu {
+    height: auto;
+    max-height: 400px;
+    overflow-x: hidden;
+}
+.scrollable-menu2 {
+    height: auto;
+    max-height: 120px;
+    overflow-x: hidden;
+}
   </style>
 </head>
 <body>
@@ -136,7 +145,7 @@ if (isset($_GET['update'])) {
     <button id="Btn1" type="button" class="btn-sm btn-secondary dropdown-toggle" data-toggle="dropdown" >
     <h5 class="text-white">Учреждения социальной политики</h5>
     </button> 
-    <div class="dropdown-menu">
+    <div class="dropdown-menu scrollable-menu">
 	<?
       $gods=substr($obj->pck[0]->date,1,4);
       $kvartalm = substr($obj->pck[0]->date,6,2);
@@ -206,7 +215,7 @@ if (isset($_GET['update'])) {
     <button id="Btn1" type="button" class="btn-sm btn-secondary dropdown-toggle" data-toggle="dropdown" >
     <h5 id="select_date" class="text-white">На дату: 01-01-2024</h5>
     </button> 
-<div class="dropdown-menu">
+<div class="dropdown-menu scrollable-menu2">
 	<?
 	  $dats = substr($obj->pck[0]->date,1);
 		$arr_date = explode(";",$dats);

@@ -109,14 +109,11 @@ if (isset($_GET['update'])) {
    <div id="logo1" class="row bg-white">
        <div class="col-lg-12"><!-- foto1 pole-->
 	   <div class="row bg-white">
-	   <div class="col-lg-6">
-	   <p><center><img src="images/atv.png" class="img-circle" width="200" height="200"/></center></p>
-	   </div>
-	   <div class="col-lg-6">
+	   	   <div class="col-lg-12">
 	   <p></p>
 				  <tr>
-					<td><h2><strong>Андреева <br>Татьяна  <br>Викторовна </strong></h2></td>
-					<td><h5 style="color: black" ><p></p>Начальник управления</h5></td>
+					<td><h1><strong>МИНИСТЕРСТВО<br>СОЦИАЛЬНОЙ ПОЛИТИКИ  <br>ЛИПЕЦКОЙ ОБЛАСТИ </strong></h1></td>
+					<br>
 				  </tr>
 	   </div> 
 	   </div>

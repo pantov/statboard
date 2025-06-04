@@ -91,7 +91,7 @@ if (isset($_GET['update'])) {
 </head>
 <body>
 	<script type="text/javascript">
-  var Gdate=1;Ggods=2025;
+  var Gdate=1;Ggods=new Date().getFullYear();
 	var Ga1;Ga2;Gb1;Gb1;Gb2;Gb3;Gi1;Gi2;Gi11;Gi12;Gc1;Gc2;Gd1;Ge1;Ge2;Gf1;Gf2;Gf11;Gf12;Gf21;Gf22;Gg1;Gg2;Gg11;Gg12;Gg21;Gg22;Gh1;Gh2;Gh3;Gh4;Gh5;Gh11;Gh12;Gh13;Gh14;Gh15;Gh21;Gh22;Gh23;Gh24;Gh25;Gj1;Gj2;Gj3;Gj11;Gj12;Gj13;Gj21;Gj22;Gj23;Gk0;Gk1;Gk2;Gk3;Gk4;Gk5;Gk6;Gk7;Gk8;Gk9;Gk10;Gl1;Gl2;Gl3;Gl11;Gl12;Gl13;Gl21;Gl22;Gl23;Gtmp0;
 	  </script>
 	

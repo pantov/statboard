@@ -15,7 +15,7 @@
   }  
 
 if (isset($_GET['update'])) {
-  $xml="http://i48s-d-db1/ina/st/hs/sttst/data";
+  $xml="http://i48s-d-db1/ina/st/hs/sttst/data/0";
   $objxml = get_data($xml);
   if ($objxml) {$objxml->saveXML("data.xml");}
 };

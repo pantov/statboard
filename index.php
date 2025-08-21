@@ -69,7 +69,9 @@ if (isset($_GET['update'])) {
   </style>
 </head>
 <body>
-
+	<script type="text/javascript">
+      Ggods=new Date().getFullYear();
+	</script>
 <div class="container-fluid bg-light" id="container2">
 <div id="container1" class="container-fluid bg-white" style="padding-top: 1px">
  
@@ -176,14 +178,14 @@ if (isset($_GET['update'])) {
 					<td><center><p>по рядовым сотрудникам</p></center></td>
 				  </tr>
 				  <tr>
-					<td colspan="2" align="center"><h5>2022 год</h5></td>
+					<td colspan="2" align="center"><h5 id="god1">2022</h5></td>
 				  </tr>				  
 				  <tr>
 					<td><center><h3 id="i1"> <animated-integer :value="i1"></animated-integer> </h3></center></td>
 					<td><center><h3 id="i2"> <animated-integer :value="i2"></animated-integer> </h3></center></td>
 				  </tr>
 				  <tr>
-					<td colspan="2" align="center"><h5>2023 год</h5></td>
+					<td colspan="2" align="center"><h5 id="god2">2023</h5></td>
 				  </tr>				  
 				  <tr>
 					<td><center><h3 id="i3"> <animated-integer :value="i3"></animated-integer> </h3></center></td>
@@ -245,7 +247,7 @@ if (isset($_GET['update'])) {
 			<div  class="card-header text-center"> <h4> Текучесть, чел. </h4> </div>
 				<table text-align="center" style="width:100%">
 				  <tr>
-                                        <center><h5>2023 год</h5></center>
+                                        <center><h5 id="god3">2023 год</h5></center>
 				  </tr>
 				  <tr>
 					<td><center><h5>Назначено</h5></center></td>
@@ -284,7 +286,7 @@ if (isset($_GET['update'])) {
 					<center><h5>Участие в образовательных</h5></center>
 				  </tr>
 				  <tr>
-					<center><h5>мероприятиях в 2023 году</h5></center>
+					<center><h5 id="god4">мероприятиях в 2023 году</h5></center>
 				  </tr>
 				  <tr>
 					<td><center><h3 id="e1">0</h3></center></td>
@@ -749,6 +751,13 @@ function PaintChart2(k1,k2,k3,k4,k5) {
     Chart2.update();
 }
 
+
+	
+Ggods=new Date().getFullYear();
+document.getElementById('god1').textContent = Ggods-1+' год';
+document.getElementById('god2').textContent = Ggods+' год';
+document.getElementById('god3').textContent = Ggods+' год';
+document.getElementById('god4').textContent = 'мероприятиях в '+ String(Ggods-1) +' году';	
 
     </script>
 

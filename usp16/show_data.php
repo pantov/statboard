@@ -1,8 +1,8 @@
 <?php
 // Загружаем и парсим XML файл
 $xmlFile = 'data.xml';
-$data = [];
-$periods = [];
+$data = array();
+$periods = array();
 
 if (file_exists($xmlFile)) {
     $xml = simplexml_load_file($xmlFile);
@@ -15,7 +15,7 @@ if (file_exists($xmlFile)) {
         
         foreach ($pckNodes as $pck) {
             // Получаем все поля узла pck
-            $item = [];
+            $item = array();
             foreach ($pck->children() as $field) {
                 $fieldName = $field->getName();
                 $item[$fieldName] = (string)$field;
@@ -219,7 +219,7 @@ $selectedPeriod = !empty($periods) ? $periods[$selectedPeriodIndex] : null;
                     <select name="select_org" id="select_org">
                         <?php foreach ($data as $index => $item): ?>
                             <option value="<?php echo $index; ?>">
-                                <?php echo htmlspecialchars($item['y'] ?? 'Без названия'); ?>
+                                <?php echo htmlspecialchars(isset($item['y']) ? $item['y'] : 'Без названия'); ?>
                             </option>
                         <?php endforeach; ?>
                     </select>
@@ -241,14 +241,14 @@ $selectedPeriod = !empty($periods) ? $periods[$selectedPeriodIndex] : null;
                 <?php if ($selectedOrg && $selectedPeriod): ?>
                     <div class="card visible" id="data-card">
                         <div class="card-header">
-                            <div class="org-title"><?php echo htmlspecialchars($selectedOrg['y'] ?? 'Без названия'); ?></div>
+                            <div class="org-title"><?php echo htmlspecialchars(isset($selectedOrg['y']) ? $selectedOrg['y'] : 'Без названия'); ?></div>
                             <div class="period-title">Период: <?php echo htmlspecialchars($selectedPeriod); ?></div>
                         </div>
                         
                         <div class="data-grid">
                             <?php 
                             // Показываем только основные поля (исключаем служебные)
-                            $excludeFields = ['y', 'x', 'date'];
+                            $excludeFields = array('y', 'x', 'date');
                             foreach ($selectedOrg as $key => $value): 
                                 if (!in_array($key, $excludeFields)):
                                     // Получаем значение для выбранного периода
@@ -301,7 +301,7 @@ $selectedPeriod = !empty($periods) ? $periods[$selectedPeriodIndex] : null;
             // Добавляем все поля кроме исключенных
             const excludeFields = ['y', 'x', 'date'];
             Object.keys(selectedOrg).forEach(key => {
-                if (!excludeFields.includes(key)) {
+                if (excludeFields.indexOf(key) === -1) {
                     const values = selectedOrg[key].split(';');
                     // periodIndex + 1 потому что первое значение всегда пустое
                     const periodValue = values[periodIndex + 1] || 'N/A';
@@ -334,6 +334,7 @@ $selectedPeriod = !empty($periods) ? $periods[$selectedPeriodIndex] : null;
         
         // Функция для экранирования HTML
         function escapeHtml(text) {
+            if (text == null) return '';
             const div = document.createElement('div');
             div.textContent = text;
             return div.innerHTML;

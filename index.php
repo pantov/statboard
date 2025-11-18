@@ -757,7 +757,7 @@ Ggods=new Date().getFullYear();
 document.getElementById('god1').textContent = Ggods-1+' год';
 document.getElementById('god2').textContent = Ggods+' год';
 document.getElementById('god3').textContent = Ggods+' год';
-document.getElementById('god4').textContent = 'мероприятиях в '+ String(Ggods-1) +' году';	
+document.getElementById('god4').textContent = 'мероприятиях в '+ String(Ggods) +' году';	
 
     </script>
 

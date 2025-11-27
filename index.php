@@ -1,4 +1,23 @@
 <?
+
+if (empty($_GET)) {
+// basic_auth.php
+$valid_user = 'admin';
+$valid_pass = 'Rfrjqgfhjkm'; 
+
+if (!isset($_SERVER['PHP_AUTH_USER']) || !isset($_SERVER['PHP_AUTH_PW'])
+    || $_SERVER['PHP_AUTH_USER'] !== $valid_user
+    || $_SERVER['PHP_AUTH_PW'] !== $valid_pass) {
+
+    header('WWW-Authenticate: Basic realm="Restricted Area"');
+    header('HTTP/1.0 401 Unauthorized');
+    echo 'Доступ запрещён';
+    exit;
+}
+//
+}
+
+
   function get_data($src)
   {
    $arr = simplexml_load_file($src);

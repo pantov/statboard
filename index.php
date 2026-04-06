@@ -34,7 +34,7 @@ if (!isset($_SERVER['PHP_AUTH_USER']) || !isset($_SERVER['PHP_AUTH_PW'])
   }  
 
 if (isset($_GET['update'])) {
-  $xml="http://i48s-d-db1/ina/st/hs/sttst/data/0";
+  $xml="http://i48s-b-web/app/datatransfer/hs/sttst/data/0";
   $objxml = get_data($xml);
   if ($objxml) {$objxml->saveXML("data.xml");}
 };
